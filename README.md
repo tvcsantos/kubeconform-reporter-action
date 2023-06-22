@@ -15,6 +15,46 @@ Several output modes are supported depending on the user input and if the action
 - `check` - report will be added in a GitHub check.
 - `summary` - report will be added as a summary.
 
+### Examples
+
+Below we illustrate examples of expected outputs depending on the report mode.
+
+#### Mode `pr-comment`
+
+> ℹ️ By default when the action runs with `pr-comment` mode in a non pull-request context we will produce a report using
+> `summary` mode.
+
+When running in `pr-comment` mode in case of no errors found you will get a comment in you pull request that should look
+as follows
+
+![pr-comment-ok](docs/images/pr_comment_ok_example.png)
+
+If errors are found then a nice table will appear in a form of pull request comment highlighting all the important
+details for the report as in the example below
+
+![pr-comment-error](docs/images/pr_comment_error_example.png)
+
+#### Mode `check`
+
+When running in `check` mode a GitHub check will be created to add the report. In case of no errors found your check
+will succeed, and you will get something as follows
+
+![check-ok](docs/images/check_ok_example.png)
+
+If errors are found, the GitHub check will fail, and you will obtain the following
+
+![check-error](docs/images/check_error_example.png)
+
+#### Mode `summary`
+
+When running in `summary` mode a summary will be created with the following if no errors are found
+
+![summary-ok](docs/images/summary_ok_example.png)
+
+And in case of errors with the following
+
+![summary-error](docs/images/summary_error_example.png)
+
 ## Changelog
 
 All notable changes to this project are documented in [`CHANGELOG.md`](CHANGELOG.md).
@@ -40,11 +80,12 @@ jobs:
 
 ### Inputs
 
-| Input           | Type    | Required | Default Value | Description                                                                          |
-|-----------------|---------|----------|---------------|--------------------------------------------------------------------------------------|
-| `file`          | String  | Yes      | -             | Path to `Kubeconform` `JSON` results file.                                           |
-| `show-filename` | Boolean | No       | `true`        | Show references to filenames that have errors in the report.                         |
-| `mode`          | Enum    | No       |               | Report output mode. <ul><li>`pr-comment`</li><li>`check`</li><li>`summary`</li></ul> |
+| Input           | Type    | Required | Default Value         | Description                                                                          |
+|-----------------|---------|----------|-----------------------|--------------------------------------------------------------------------------------|
+| `file`          | String  | Yes      | -                     | Path to `Kubeconform` `JSON` results file.                                           |
+| `show-filename` | Boolean | No       | `true`                | Show references to filenames that have errors in the report.                         |
+| `mode`          | Enum    | No       |                       | Report output mode. <ul><li>`pr-comment`</li><li>`check`</li><li>`summary`</li></ul> |
+| `token`         | Token   | No       | `${{ github.token }}` | Your GitHub token.                                                                   |
 
 ### Outputs
 
