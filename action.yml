@@ -1,6 +1,4 @@
-# TODO Change name to your reporter
 name: 'Kubeconform reporter'
-# TODO Change the description for your reporter
 description: 'Make a report for Kubeconform results'
 
 branding:
@@ -8,7 +6,6 @@ branding:
   color: blue
 
 inputs:
-  # TODO Adapt to your needs, could be a file, a directory, etc.
   file:
     required: true
     description: 'Path to Kubeconform JSON results file'
@@ -28,7 +25,6 @@ inputs:
     required: true
     description: 'Your GitHub token'
     default: ${{ github.token }}
-  # TODO Add extra inputs if required
 runs:
   using: 'node16'
   main: 'dist/index.js'

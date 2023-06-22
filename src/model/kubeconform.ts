@@ -1,4 +1,3 @@
-// TODO change this file with the models for the results that are being reported
 export interface KubeconformResult {
   resources: KubeconformResultEntry[]
 }

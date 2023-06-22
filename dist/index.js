@@ -111,9 +111,7 @@ exports.ActionOrchestrator = ActionOrchestrator;
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.CHECK_NAME = exports.APPLICATION_NAME = void 0;
-// TODO change to your application name (e.g. kubeconform-reporter)
 exports.APPLICATION_NAME = 'kubeconfrom-reporter';
-// TODO change to your check name (e.g. Kubeconform Check)
 exports.CHECK_NAME = 'Kubeconform Check';
 
 
@@ -442,7 +440,6 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.gatherInputs = exports.ModeOption = exports.Input = void 0;
 const core = __importStar(__nccwpck_require__(2186));
 const utils_1 = __nccwpck_require__(1520);
-// TODO Add or change inputs as required
 var Input;
 (function (Input) {
     Input["FILE"] = "file";
@@ -457,7 +454,6 @@ var ModeOption;
     ModeOption["SUMMARY"] = "summary";
 })(ModeOption || (exports.ModeOption = ModeOption = {}));
 function gatherInputs() {
-    // TODO adapt method to return your changed inputs if required
     const file = getInputFile();
     const mode = getInputMode();
     const token = getInputToken();
@@ -487,8 +483,6 @@ function getInputMode() {
 function getInputToken() {
     return core.getInput(Input.GITHUB_TOKEN, { required: true });
 }
-// TODO Add methods for your extra inputs
-// Pattern: function getInput<input-name>(): <type>
 
 
 /***/ }),
@@ -567,9 +561,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.CheckReporter = void 0;
-// TODO change with a FAIL message for your summary
 const FAIL_SUMMARY = 'Manifests found that are not valid!';
-// TODO change with a SUCCESS message for your summary
 const SUCCESS_SUMMARY = 'No invalid manifests!';
 class CheckReporter {
     constructor(gitHubCheck) {
@@ -663,13 +655,11 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.KubeconformReportGenerator = void 0;
 const fs = __importStar(__nccwpck_require__(3292));
 const utils_1 = __nccwpck_require__(1316);
-// TODO change all constants below with your reporting format and messages
 const HEADER = (showFilename) => `${showFilename ? '| Filename ' : ''}| Name | Kind | Version | Message |`;
 const HEADER_ALIGNMENT = (showFilename) => `${showFilename ? '|-' : ''}|-|-|-|-|`;
 const FILE_ENCODING = 'utf-8';
 const SUCCESS_COMMENT = '# :white_check_mark: All Kubernetes manifests are valid!';
 const FAIL_COMMENT = '# :x: Invalid Kubernetes manifests found!';
-// TODO change this class with and implementation for your report generator
 class KubeconformReportGenerator {
     constructor() { }
     makeReportLine(line, properties) {
