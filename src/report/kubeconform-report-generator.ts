@@ -6,7 +6,6 @@ import {ReportGenerator} from './report-generator'
 import {ReportProperties} from './report-properties'
 import {noBreak} from '../utils/utils'
 
-// TODO change all constants below with your reporting format and messages
 const HEADER = (showFilename: boolean): string =>
   `${showFilename ? '| Filename ' : ''}| Name | Kind | Version | Message |`
 const HEADER_ALIGNMENT = (showFilename: boolean): string =>
@@ -16,7 +15,6 @@ const SUCCESS_COMMENT =
   '# :white_check_mark: All Kubernetes manifests are valid!'
 const FAIL_COMMENT = '# :x: Invalid Kubernetes manifests found!'
 
-// TODO change this class with and implementation for your report generator
 export class KubeconformReportGenerator implements ReportGenerator {
   private constructor() {}
 
