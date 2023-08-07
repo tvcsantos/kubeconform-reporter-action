@@ -94,7 +94,7 @@ No outputs available.
 
 ## License
 
-The scripts and documentation in this project are released under the [MIT License](LICENSE.md).
+This project is released under the [MIT License](LICENSE.md).
 
 ## Contributions
 
