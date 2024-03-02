@@ -74,7 +74,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Implement `kubeconform-reporter-action` github action
+- Implement `kubeconform-reporter-action` GitHub action
 
 [3.0.0]: https://github.com/tvcsantos/kubeconform-reporter-action/compare/v2.5.0...v3.0.0
 [2.5.0]: https://github.com/tvcsantos/kubeconform-reporter-action/compare/v2.4.0...v2.5.0
