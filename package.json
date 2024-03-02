@@ -1,7 +1,7 @@
 {
   "name": "kubeconform-reporter-action",
   "description": "A GitHub action for generating reports for Kubeconform",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "author": "tvcsantos",
   "private": true,
   "homepage": "https://github.com/tvcsantos/kubeconform-reporter-action",
